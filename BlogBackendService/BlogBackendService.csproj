@@ -179,10 +179,6 @@
     <Compile Include="Authentication\JwtWriterFormat.cs" />
     <Compile Include="Authentication\OAuthOptions.cs" />
     <Compile Include="Authentication\OAuthProvider.cs" />
-    <Compile Include="Clients\IdentityClient.cs" />
-    <Compile Include="Clients\IIdentityClient.cs" />
-    <Compile Include="Clients\ISearchClient.cs" />
-    <Compile Include="Clients\SearchClient.cs" />
     <Compile Include="Configuration\AuthConfiguration.cs" />
     <Compile Include="Configuration\IAuthConfiguration.cs" />
     <Compile Include="Data\DataContext.cs" />
@@ -223,6 +219,7 @@
     <Compile Include="Utilities\Logger.cs" />
     <Compile Include="Utilities\LoggerFactory.cs" />
     <Compile Include="Models\App.cs" />
+    <Compile Include="Models\ArticleSnapShot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

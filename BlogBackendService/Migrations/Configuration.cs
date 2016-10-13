@@ -1,18 +1,16 @@
 namespace BlogBackendService.Migrations
 {
-    using System;
-    using System.Data.Entity;
+    using Data;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BlogBackendService.Data.DataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(BlogBackendService.Data.DataContext context)
+        protected override void Seed(DataContext context)
         {
 
         }

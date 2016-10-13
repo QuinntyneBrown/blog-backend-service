@@ -10,7 +10,7 @@ namespace BlogBackendService.Dtos
         public ArticleDto(Models.Article entity)
         {
             Id = entity.Id;
-            Name = entity.Name;
+            Name = entity.Title;
         }
 
         public int? Id { get; set; }

@@ -6,7 +6,7 @@ using System.Web.Http.Description;
 
 namespace BlogBackendService.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [RoutePrefix("api/article")]
     public class ArticleController : ApiController
     {

@@ -6,6 +6,8 @@ namespace BlogBackendService.Data
     {
         IRepository<App> Apps { get; }
         IRepository<Article> Articles { get; }
+        IRepository<ArticleSnapShot> ArticleSnapShots { get; }
+
         void SaveChanges();
     }
 }

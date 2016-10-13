@@ -213,6 +213,18 @@
     <Content Include="src\app\app.component.scss">
       <DependentUpon>app.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\app\components\article-edit-form.component.html">
+      <DependentUpon>article-edit-form.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\components\article-edit-form.component.scss">
+      <DependentUpon>article-edit-form.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\components\article-list.component.html">
+      <DependentUpon>article-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\components\article-list.component.scss">
+      <DependentUpon>article-list.component.ts</DependentUpon>
+    </Content>
     <Content Include="webpack.config.js" />
     <Content Include="tsconfig.json" />
     <Content Include="typedoc.json" />
@@ -295,6 +307,8 @@
     <TypeScriptCompile Include="src\app\services\services.module.ts" />
     <TypeScriptCompile Include="src\app\services\article.service.ts" />
     <TypeScriptCompile Include="src\app\services\index.ts" />
+    <TypeScriptCompile Include="src\app\components\article-edit-form.component.ts" />
+    <TypeScriptCompile Include="src\app\components\article-list.component.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>

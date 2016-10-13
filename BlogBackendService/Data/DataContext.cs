@@ -15,6 +15,7 @@ namespace BlogBackendService.Data
 
         public DbSet<App> Apps { get; set; }
         public DbSet<Article> Articles { get; set; }
+        public DbSet<ArticleSnapShot> ArticleSnapShots { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,7 +1,7 @@
-using System;
-using System.Collections.Generic;
-using BlogBackendService.Dtos;
 using BlogBackendService.Data;
+using BlogBackendService.Dtos;
+using BlogBackendService.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BlogBackendService.Services
@@ -19,8 +19,15 @@ namespace BlogBackendService.Services
         {
             var entity = _repository.GetAll()
                 .FirstOrDefault(x => x.Id == request.Id && x.IsDeleted == false);
-            if (entity == null) _repository.Add(entity = new Models.Article());
-            entity.Name = request.Name;
+
+            if (entity == null) _repository.Add(entity = new Article());
+            entity.Title = request.Name;
+
+            entity.SnapShots.Add(new ArticleSnapShot()
+            {
+                Title = entity.Title
+            });
+
             _uow.SaveChanges();
             return new ArticleAddOrUpdateResponseDto(entity);
         }
@@ -47,7 +54,7 @@ namespace BlogBackendService.Services
         }
 
         protected readonly IUow _uow;
-        protected readonly IRepository<Models.Article> _repository;
+        protected readonly IRepository<Article> _repository;
         protected readonly ICache _cache;
     }
 }

@@ -2,50 +2,48 @@ import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 import { Article } from "../models";
 import { Observable } from "rxjs";
-
-import { apiCofiguration } from "../configuration";
-
+import { ApiConfiguration } from "../configuration";
 
 @Injectable()
 export class ArticleService {
-    constructor(private _http: Http) { }
+    constructor(private _http: Http, private _apiConfiguration: ApiConfiguration) { }
 
-    public add(entity: Article) {
+    public add(entity: Article): Observable<void> | Observable<boolean> {
         return this._http
-            .post(`${apiCofiguration.baseUrl}/api/article/add`, entity)
+            .post(`${this._baseUrl}/api/article/add`, entity)
             .map(data => data.json())
             .catch(err => {
                 return Observable.of(false);
             });
     }
 
-    public get() {
+    public get(): Observable<Array<Article>> | Observable<boolean> {
         return this._http
-            .get(`${apiCofiguration.baseUrl}/api/article/get`)
+            .get(`${this._baseUrl}/api/article/get`)
             .map(data => data.json())
             .catch(err => {
                 return Observable.of(false);
             });
     }
 
-    public getById(options: { id: number }) {
+    public getById(options: { id: number }): Observable<Article> | Observable<boolean> {
         return this._http
-            .get(`${apiCofiguration.baseUrl}/api/article/getById?id=${options.id}`)
+            .get(`${this._baseUrl}/api/article/getById?id=${options.id}`)
             .map(data => data.json())
             .catch(err => {
                 return Observable.of(false);
             });
     }
 
-    public remove(options: { id: number }) {
+    public remove(options: { id: number }): Observable<void> | Observable<boolean> {
         return this._http
-            .delete(`${apiCofiguration.baseUrl}/api/article/remove?id=${options.id}`)
+            .delete(`${this._baseUrl}/api/article/remove?id=${options.id}`)
             .map(data => data.json())
             .catch(err => {
                 return Observable.of(false);
             });
     }
 
-    public get baseUrl() { return apiCofiguration.baseUrl; }
+    private get _baseUrl() { return this._apiConfiguration.baseUrl; }
 
 }

@@ -28,7 +28,7 @@ namespace BlogBackendService.Data
 
         public IRepository<App> Apps { get { return GetStandardRepo<App>(); } }
         public IRepository<Article> Articles { get { return GetStandardRepo<Models.Article>(); } }
-
+        public IRepository<ArticleSnapShot> ArticleSnapShots { get { return GetStandardRepo<ArticleSnapShot>(); } }
 
         protected void ConfigureDbContext(IDbContext dbContext)
         {
