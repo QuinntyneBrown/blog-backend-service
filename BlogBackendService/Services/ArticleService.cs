@@ -21,7 +21,13 @@ namespace BlogBackendService.Services
                 .FirstOrDefault(x => x.Id == request.Id && x.IsDeleted == false);
 
             if (entity == null) _repository.Add(entity = new Article());
-            entity.Title = request.Name;
+            entity.Id = request.Id.Value;
+            entity.Title = request.Title;
+            entity.HtmlContent = request.HtmlContent;
+            entity.HtmlExcerpt = request.HtmlExcerpt;
+            entity.Created = request.Created;
+            entity.Published = request.Published;
+            entity.IsPublished = request.IsPublished;
 
             entity.SnapShots.Add(new ArticleSnapShot()
             {
